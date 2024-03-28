@@ -2,8 +2,6 @@ import React from 'react';
 
 const ForecastedWeather = ({ data }) => {
 
-  console.log(data);
-
   if (!data) {
     return <div>Loading...</div>;
   }
@@ -14,11 +12,18 @@ const ForecastedWeather = ({ data }) => {
       <div className='weather-item'>
         {/* displaying forecasted weather data using object mapping */}
         {
-          Object.keys(data).map(key => {
-            return (
-              <p key={key}>{key}: {data[key]}</p>
-            );
-          })
+          data.map((forecast, index) => (
+            <div key={index}>
+              <h3>Date: {forecast.time.slice(0,10)}</h3>
+              {
+                Object.keys(forecast.values).map(key => {
+                  return (
+                    <p key={key}>{key}: {forecast.values[key]}</p>
+                  )
+                })
+              }
+            </div>
+          ))
         }
       </div>
     </div>

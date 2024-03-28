@@ -25,9 +25,8 @@ const App = () => {
       const realTimeResponse = await axios.get(`https://api.tomorrow.io/v4/weather/realtime?location=${location}&apikey=${API_KEY}`);
       const forecastResponse = await axios.get(`https://api.tomorrow.io/v4/weather/forecast?location=${location}&apikey=${API_KEY}`);
       //setting the recieved data to application states
-      // setRealTimeWeather(realTimeResponse.data.data.values);
-      // setForecastedWeather(forecastResponse.data.data.values);
-      console.log(realTimeResponse.data.data.values);
+      setRealTimeWeather(realTimeResponse.data.data.values);
+      setForecastedWeather(forecastResponse.data.timelines.daily);
       setLoading(false);
     } catch (error) {
       setError(error.message);
@@ -62,6 +61,7 @@ const App = () => {
   return (
     <div className="app">
       <h1>Weather App</h1>
+      <LocationSettings onLocationChange={handleLocationChange} handleGetCurrentLocation={handleGetCurrentLocation} />
       {loading && <LoadingIndicator />}
       {error && <ErrorComponent message={error} />}
       {!loading && !error && (
@@ -70,7 +70,6 @@ const App = () => {
           <ForecastedWeather data={forecastedWeather} />
         </div>
       )}
-      <LocationSettings onLocationChange={handleLocationChange} handleGetCurrentLocation={handleGetCurrentLocation} />
     </div>
   );
 };

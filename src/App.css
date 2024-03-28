@@ -23,8 +23,9 @@ body {
 
 .weather-datas {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
 }
 
 /* RealTimeWeather */
@@ -53,7 +54,7 @@ body {
 
 /* ForecastedWeather */
 .forecasted-weather {
-  width: 35rem;
+  width: 100%;
   margin-bottom: 20px;
   padding: 20px;
   border: 1px solid #ccc;
@@ -69,10 +70,13 @@ body {
 
 .forecasted-weather .weather-item {
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
 }
 
 .forecasted-weather .weather-item p {
   margin-bottom: 5px;
+  font-size: 14px;
 }
 
 /* ErrorComponent */

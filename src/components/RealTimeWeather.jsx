@@ -14,7 +14,7 @@ const RealTimeWeather = ({ data }) => {
         {
           Object.keys(data).map(key => {
             return (
-              <p>{key}: {data[key]}</p>
+              <p key={key}>{key}: {data[key]}</p>
             )
           })
         }
