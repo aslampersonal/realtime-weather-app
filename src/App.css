@@ -1,0 +1,159 @@
+
+body {
+  width: 100%;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.app {
+  width: 90%;
+  margin: 1rem 0;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.app h1 {
+  text-align: center;
+}
+
+.weather-datas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* RealTimeWeather */
+.real-time-weather {
+  width: 35rem;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.real-time-weather h2 {
+  margin-bottom: 10px;
+  color: #333;
+  text-align: center;
+}
+
+.real-time-weather .weather-item {
+  margin-bottom: 10px;
+}
+
+.real-time-weather .weather-item p {
+  margin-bottom: 5px;
+}
+
+/* ForecastedWeather */
+.forecasted-weather {
+  width: 35rem;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.forecasted-weather h2 {
+  margin-bottom: 10px;
+  color: #333;
+  text-align: center;
+}
+
+.forecasted-weather .weather-item {
+  margin-bottom: 10px;
+}
+
+.forecasted-weather .weather-item p {
+  margin-bottom: 5px;
+}
+
+/* ErrorComponent */
+.error-component {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ff0000;
+  border-radius: 5px;
+  background-color: #ffebee;
+  color: #ff0000;
+}
+
+/* LoadingIndicator */
+.loading-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.loading-indicator .spinner {
+  border: 5px solid #f3f3f3; /* Light grey */
+  border-top: 5px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-indicator p {
+  margin-left: 10px;
+}
+
+/* LocationSettings */
+.location-settings {
+  margin-bottom: 20px;
+}
+
+.location-settings h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.location-settings form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.location-settings label {
+  margin-bottom: 5px;
+}
+
+.location-settings input {
+  width: 20rem;
+  margin-bottom: 10px;
+  margin-left: 1rem;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.location-settings button {
+  padding: 8px 10px;
+  margin-left: 1rem;
+  border: none;
+  border-radius: 3px;
+  background-color: #3498db;
+  color: #fff;
+  cursor: pointer;
+}
+
+.location-settings button:hover {
+  background-color: #2980b9;
+}
+
+.location-settings button:focus {
+  outline: none;
+}
