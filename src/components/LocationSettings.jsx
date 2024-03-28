@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
-import Geocode from 'react-geocode';
 
 const LocationSettings = ({ onLocationChange, handleGetCurrentLocation }) => {
   const [location, setLocation] = useState('');
-
-  const API_KEY = 'cauKcfX5VUSARmiWAkV2aDhCEbKjT4Uo';
 
   const handleLocationChange = (e) => {
     setLocation(e.target.value);
   };
 
+  //fetching weather data for user entries
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (location.trim() === '') return;

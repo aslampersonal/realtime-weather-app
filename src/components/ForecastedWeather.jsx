@@ -12,6 +12,7 @@ const ForecastedWeather = ({ data }) => {
     <div className="forecasted-weather">
       <h2>Forecasted Weather</h2>
       <div className='weather-item'>
+        {/* displaying forecasted weather data using object mapping */}
         {
           Object.keys(data).map(key => {
             return (

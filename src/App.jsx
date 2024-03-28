@@ -21,18 +21,23 @@ const App = () => {
 
   const fetchData = async (location) => {
     try {
+      //calling tomorrow API with API key for getting weather data
       const realTimeResponse = await axios.get(`https://api.tomorrow.io/v4/weather/realtime?location=${location}&apikey=${API_KEY}`);
       const forecastResponse = await axios.get(`https://api.tomorrow.io/v4/weather/forecast?location=${location}&apikey=${API_KEY}`);
-      setRealTimeWeather(realTimeResponse.data.data.values);
-      setForecastedWeather(forecastResponse.data.data.values);
+      //setting the recieved data to application states
+      // setRealTimeWeather(realTimeResponse.data.data.values);
+      // setForecastedWeather(forecastResponse.data.data.values);
+      console.log(realTimeResponse.data.data.values);
       setLoading(false);
     } catch (error) {
       setError(error.message);
+      console.log(error);
       setLoading(true);
     }
   };
 
   const handleGetCurrentLocation = () => {
+    //getting user's current location (latitude & longitude)
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         async (position) => {
@@ -50,6 +55,7 @@ const App = () => {
   };
 
   const handleLocationChange = (location) => {
+    //fetching weather data for user entries
     fetchData(location);
   };
 
